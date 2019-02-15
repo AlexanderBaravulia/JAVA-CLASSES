@@ -1,16 +1,17 @@
 package playlist.model;
 
-public class Melody {
+public abstract class Melody {
     private int duration;
-    private int sizebytes;
+    private String title;
     private int bitrate;
     private MusicStyle musicStyle;
 
-    public Melody(int duration, int sizebytes, int bitrate, MusicStyle musicStyle) {
+
+    public Melody(int duration, String title, int bitrate, MusicStyle musicStyle) {
         this.duration = duration;
-        this.sizebytes = sizebytes;
         this.bitrate = bitrate;
         this.musicStyle = musicStyle;
+        this.title = title;
     }
 
     public int getDuration() {
@@ -21,12 +22,12 @@ public class Melody {
         this.duration = duration;
     }
 
-    public int getSizebytes() {
-        return sizebytes;
+    public String getTitle() {
+        return title;
     }
 
-    public void setSizebytes(int sizebytes) {
-        this.sizebytes = sizebytes;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getBitrate() {
@@ -45,5 +46,6 @@ public class Melody {
         this.musicStyle = musicStyle;
     }
 
+    public abstract void playMelody();
 
 }

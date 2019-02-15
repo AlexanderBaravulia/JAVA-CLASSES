@@ -40,5 +40,14 @@ public class MusicAlbum {
         return melodies;
     }
 
+    public List<Melody> getMelodyListByDuration(int minDuration, int maxDuration){
+        List<Melody> melodies = new ArrayList<Melody>();
+        for (Melody melody: melodyList){
+            if (melody.getDuration()> minDuration && melody.getDuration()<maxDuration){
+                melodies.add(melody);
+            }
+        }
+        return melodies;
+    }
 
 }
